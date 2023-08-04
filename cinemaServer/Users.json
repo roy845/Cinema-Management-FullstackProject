@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "_id": "64cbe31591c57778ea9a9f7c",
+      "UserName": "royatali94",
+      "FirstName": "Roy",
+      "LastName": "Atali",
+      "SessionTimeOut": 60,
+      "createdAt": "2023-08-03T17:25:41.442Z"
+    },
+    {
+      "_id": "64cbe34891c57778ea9a9f82",
+      "UserName": "efratatali",
+      "FirstName": "Efrat",
+      "LastName": "Atali",
+      "SessionTimeOut": 45,
+      "createdAt": "2023-08-03T17:26:32.660Z"
+    }
+  ]
+}

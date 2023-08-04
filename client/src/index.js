@@ -1,0 +1,28 @@
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
+import App from "./App";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import { AuthProvider } from "./contex/auth";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+
+import "./index.css";
+
+const container = document.getElementById("root");
+const root = createRoot(container);
+
+root.render(
+  <Provider store={store}>
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <Router>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+        <Toaster />
+      </Router>
+    </LocalizationProvider>
+  </Provider>
+);

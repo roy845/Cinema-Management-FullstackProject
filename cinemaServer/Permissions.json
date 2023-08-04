@@ -1,0 +1,78 @@
+{
+  "usersPermissions": [
+    {
+      "id": "64cbe31591c57778ea9a9f7c",
+      "permissions": [
+        {
+          "name": "View Subscriptions",
+          "checked": true
+        },
+        {
+          "name": "Create Subscriptions",
+          "checked": true
+        },
+        {
+          "name": "Delete Subscriptions",
+          "checked": true
+        },
+        {
+          "name": "Update Subscriptions",
+          "checked": true
+        },
+        {
+          "name": "View Movies",
+          "checked": true
+        },
+        {
+          "name": "Create Movies",
+          "checked": true
+        },
+        {
+          "name": "Delete Movies",
+          "checked": true
+        },
+        {
+          "name": "Update Movies",
+          "checked": true
+        }
+      ]
+    },
+    {
+      "id": "64cbe34891c57778ea9a9f82",
+      "permissions": [
+        {
+          "name": "View Subscriptions",
+          "checked": false
+        },
+        {
+          "name": "Create Subscriptions",
+          "checked": false
+        },
+        {
+          "name": "Delete Subscriptions",
+          "checked": false
+        },
+        {
+          "name": "Update Subscriptions",
+          "checked": true
+        },
+        {
+          "name": "View Movies",
+          "checked": true
+        },
+        {
+          "name": "Create Movies",
+          "checked": true
+        },
+        {
+          "name": "Delete Movies",
+          "checked": true
+        },
+        {
+          "name": "Update Movies",
+          "checked": true
+        }
+      ]
+    }
+  ]
+}
