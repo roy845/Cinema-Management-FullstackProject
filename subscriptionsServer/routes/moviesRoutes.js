@@ -16,16 +16,13 @@ router.get("/getAllMovies", getAllMoviesController);
 //GetMovie || METHOD GET
 router.get("/getMovie/:movieId", getMovieController);
 
-//GetMovie || METHOD GET
-router.get("/getMovie/:movieId", getMovieController);
-
-//UpdateMovie || METHOD POST
+//createMovie || METHOD POST
 router.post("/createMovie", createMovieController);
 
 //deleteMovie || METHOD DELETE
 router.delete("/deleteMovie/:movieId", deleteMovieController);
 
-//UpdateMovie || METHOD PUT
+//updateMovie || METHOD PUT
 router.put("/updateMovie/:movieId", updateMovieController);
 
 module.exports = router;

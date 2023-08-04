@@ -1,6 +1,5 @@
 import axios from "axios";
 const CINEMA_BASE_URL = "http://localhost:8801/";
-// const SUBSCRIPTIONS_BASE_URL = "http://localhost:8800/";
 
 const API_URLS = {
   login: `${CINEMA_BASE_URL}api/auth/login`,

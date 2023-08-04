@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     textDecoration: "none",
-    justifyContent: "center", // Center the content horizontally
+    justifyContent: "center",
     cursor: "pointer",
   }),
   text: {
@@ -29,8 +29,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
 }));
-
-//color for dark mode #730580
 
 const FancyBox = ({ children, onClick, width, height }) => {
   const classes = useStyles({ width, height });

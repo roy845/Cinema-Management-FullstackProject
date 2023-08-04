@@ -1,6 +1,5 @@
 const jwt = require("jsonwebtoken");
 
-//Protected Routes based on token
 const requireSignIn = async (req, res, next) => {
   try {
     const decode = jwt.verify(
@@ -16,7 +15,6 @@ const requireSignIn = async (req, res, next) => {
   }
 };
 
-//admin access
 const isAdmin = async (req, res, next) => {
   try {
     const decode = jwt.verify(

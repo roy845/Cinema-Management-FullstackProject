@@ -70,7 +70,6 @@ const Movies = () => {
         getAllMembers(),
       ]);
 
-      // Create a lookup table for quick access
       const membersById = membersData.reduce((acc, member) => {
         acc[member._id] = member;
         return acc;
@@ -119,7 +118,7 @@ const Movies = () => {
   const handleDelete = async (id) => {
     try {
       await deleteMovie(id);
-      await getAllMovies();
+      await fetchAllData();
       toast.success("Movie deleted successfully!");
     } catch (error) {
       toast.error(error);

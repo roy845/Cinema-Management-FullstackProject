@@ -73,12 +73,10 @@ const EditUser = () => {
 
     setUser((prevUser) => {
       const updatedPermissions = prevUser.permissions.map((permission) => {
-        // If a permission is clicked on
         if (permission.name === permissionName) {
           return { ...permission, checked: isChecked };
         }
 
-        // If a 'Create', 'Update' or 'Delete' option is checked, also check 'View' option for the same category
         if (
           isChecked &&
           (permissionName.includes("Create") ||

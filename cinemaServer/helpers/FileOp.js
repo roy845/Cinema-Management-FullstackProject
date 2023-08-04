@@ -1,6 +1,5 @@
 const jsonfile = require("jsonfile");
 
-// Read from a JSON file using async/await
 const readJsonFile = async (filePath) => {
   try {
     const data = await jsonfile.readFile(filePath);
@@ -11,7 +10,6 @@ const readJsonFile = async (filePath) => {
   }
 };
 
-// Write to a JSON file using async/await
 const writeJsonFile = async (filePath, data) => {
   try {
     await jsonfile.writeFile(filePath, data, { spaces: 2 });

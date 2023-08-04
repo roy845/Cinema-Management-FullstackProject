@@ -53,7 +53,6 @@ const addUserController = async (req, res) => {
 
     const { UserName, FirstName, LastName, SessionTimeOut } = user;
 
-    //validations
     if (!user.UserName) {
       return res.send({ error: "User Name is Required" });
     }
@@ -74,7 +73,6 @@ const addUserController = async (req, res) => {
       return res.send({ error: "SessionTimeOut is Required" });
     }
 
-    //check user
     const existingUser = await User.findOne({ UserName });
 
     if (existingUser) {
@@ -84,10 +82,8 @@ const addUserController = async (req, res) => {
       });
     }
 
-    //regiser user
     const hashedPassword = await hashPassword(req.body.user.Password);
 
-    //save new user to db
     const newUser = await new User({
       UserName,
       Password: hashedPassword,
@@ -98,14 +94,12 @@ const addUserController = async (req, res) => {
 
     const { Password, isAdmin, updatedAt, __v, ...userInfo } = newUser._doc;
 
-    //reading and writing to Users.json file
     let usersData = await readJsonFile(usersFilePath);
 
     usersData.users.push(userInfo);
 
     await writeJsonFile(usersFilePath, usersData);
 
-    //reading and writing to Permissions.json file
     let permissionsData = await readJsonFile(permissionsFilePath);
 
     permissionsData.usersPermissions.push({
@@ -154,7 +148,6 @@ const updateUserController = async (req, res) => {
 
     const { Password, isAdmin, updatedAt, __v, ...userInfo } = updateUser._doc;
 
-    //reading and writing to Users.json file
     let usersData = await readJsonFile(usersFilePath);
 
     const indexOfUserFromFile = usersData.users.findIndex(
@@ -165,7 +158,6 @@ const updateUserController = async (req, res) => {
 
     await writeJsonFile(usersFilePath, usersData);
 
-    //reading and writing to Permissions.json file
     let permissionsData = await readJsonFile(permissionsFilePath);
 
     const indexOfPermissionsFromFile =
@@ -203,7 +195,6 @@ const deleteUserController = async (req, res) => {
 
     await User.findByIdAndDelete(userId);
 
-    //reading and writing to Users.json file
     let usersData = await readJsonFile(usersFilePath);
 
     const indexOfUserFromFile = usersData.users.findIndex(
@@ -216,7 +207,6 @@ const deleteUserController = async (req, res) => {
 
     await writeJsonFile(usersFilePath, usersData);
 
-    //reading and writing to Permissions.json file
     let permissionsData = await readJsonFile(permissionsFilePath);
 
     const indexOfPermissionsFromFile =

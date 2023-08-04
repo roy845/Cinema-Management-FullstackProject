@@ -86,7 +86,6 @@ const Members = () => {
         getAllSubscriptions(),
       ]);
 
-      // Create a lookup table for quick access
       const moviesById = moviesData.reduce((acc, movie) => {
         acc[movie._id] = movie;
         return acc;
@@ -138,8 +137,8 @@ const Members = () => {
   const handleDelete = async (id) => {
     try {
       await deleteMember(id);
-      await getAllMembers();
-      toast.success("Movie deleted successfully!");
+      await fetchAllData();
+      toast.success("Member deleted successfully!");
     } catch (error) {
       toast.error(error);
     }
@@ -388,7 +387,6 @@ const Members = () => {
                               </div>
                             )}
 
-                          {/*add the movies the member watched and the date*/}
                           <ul>
                             {member.moviesWithDates?.map(
                               ({ movie, dateWatched }) => (

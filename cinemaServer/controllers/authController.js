@@ -7,7 +7,7 @@ const { permissionsFilePath, usersFilePath } = require("../paths/filePaths");
 const registerController = async (req, res) => {
   try {
     const { UserName, FirstName, LastName } = req.body;
-    //validations
+
     if (!UserName) {
       return res.send({ error: "User Name is Required" });
     }
@@ -24,7 +24,6 @@ const registerController = async (req, res) => {
       return res.send({ error: "Last Name is Required" });
     }
 
-    //check user
     const existingUser = await UserModel.findOne({ UserName });
 
     if (existingUser) {
@@ -34,10 +33,8 @@ const registerController = async (req, res) => {
       });
     }
 
-    //regiser user
     const hashedPassword = await hashPassword(req.body.Password);
 
-    //save new user to db
     const user = await new UserModel({
       UserName,
       Password: hashedPassword,
@@ -47,14 +44,12 @@ const registerController = async (req, res) => {
 
     const { Password, isAdmin, updatedAt, __v, ...userInfo } = user._doc;
 
-    //reading and writing to Users.json file
     let usersData = await readJsonFile(usersFilePath);
 
     usersData.users.push(userInfo);
 
     await writeJsonFile(usersFilePath, usersData);
 
-    //reading and writing to Permissions.json file
     let permissionsData = await readJsonFile(permissionsFilePath);
 
     permissionsData.usersPermissions.push({
@@ -112,19 +107,17 @@ const registerController = async (req, res) => {
   }
 };
 
-//POST LOGIN
 const loginController = async (req, res) => {
   try {
     const { UserName, Password } = req.body;
 
-    //validations
     if (!UserName || !Password) {
       return res.status(404).send({
         success: false,
         message: "Invalid email or password",
       });
     }
-    //check user
+
     const user = await UserModel.findOne({ UserName });
     if (!user) {
       return res.status(404).send({
@@ -153,7 +146,6 @@ const loginController = async (req, res) => {
 
     await writeJsonFile(usersFilePath, usersData);
 
-    //create token
     const token = jwt.sign(
       {
         UserInfo: {
@@ -190,19 +182,7 @@ const loginController = async (req, res) => {
   }
 };
 
-// //get admin routes
-// const getAdminRoutes = (req, res) => {
-//   res.status(200).send({ ok: true });
-// };
-
-// //get user or admin routes
-// const getUserOrAdminRoutes = (req, res) => {
-//   res.status(200).send({ ok: true });
-// };
-
 module.exports = {
   registerController,
   loginController,
-  //   getUserOrAdminRoutes,
-  //   getAdminRoutes,
 };

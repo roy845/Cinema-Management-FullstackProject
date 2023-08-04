@@ -87,7 +87,6 @@ module.exports = {
     try {
       const { subscription } = req.body;
 
-      // Find the Subscription document with the specified MemberId
       let subscription1 = await Subscription.findOne({
         MemberId: subscription.MemberId,
       });
@@ -95,7 +94,6 @@ module.exports = {
       console.log(subscription1);
 
       if (subscription1) {
-        // If the subscription exists, add the new movie to the Movies array
         subscription1 = await Subscription.findOneAndUpdate(
           { MemberId: subscription.MemberId },
           {
@@ -106,7 +104,7 @@ module.exports = {
               },
             },
           },
-          { new: true } // This option ensures that the modified document is returned
+          { new: true }
         );
         res.send({
           success: true,
@@ -114,7 +112,6 @@ module.exports = {
           data: subscription,
         });
       } else {
-        // If the subscription doesn't exist, create a new one
         subscription1 = new Subscription({
           MemberId: subscription.MemberId,
           Movies: [

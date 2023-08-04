@@ -71,7 +71,7 @@ const EditMember = () => {
                 onSubmit={handleFormSubmit}
                 style={{
                   display: "flex",
-                  flexDirection: "column", // Changed from "row"
+                  flexDirection: "column",
                   gap: "20px",
                   justifyContent: "center",
                   width: "100%",

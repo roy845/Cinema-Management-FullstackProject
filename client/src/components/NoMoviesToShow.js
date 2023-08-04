@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       padding: theme.spacing(6),
     },
-    border: "2px solid red", // add border and borderColor properties
+    border: "2px solid red",
     borderColor: "red",
   },
   header: {
