@@ -6,6 +6,8 @@ import { getMember, updateMember } from "../Api/serverAPI";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router";
 import Spinner from "../components/Spinner";
+import CancelIcon from "@mui/icons-material/Cancel";
+import UpdateIcon from "@mui/icons-material/Update";
 
 const EditMember = () => {
   const [member, setMember] = useState({
@@ -117,13 +119,19 @@ const EditMember = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <Button type="submit" variant="contained" color="primary">
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                    endIcon={<UpdateIcon />}
+                  >
                     Update
                   </Button>
                   <Button
                     variant="contained"
                     style={{ backgroundColor: "red", color: "white" }}
                     onClick={() => navigate("/members/allMembers")}
+                    endIcon={<CancelIcon />}
                   >
                     Cancel
                   </Button>

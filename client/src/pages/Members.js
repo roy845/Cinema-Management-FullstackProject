@@ -19,6 +19,7 @@ import { toast } from "react-hot-toast";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import SearchIcon from "@mui/icons-material/Search";
+import AddIcon from "@mui/icons-material/Add";
 import {
   getAllMembers,
   deleteMember,
@@ -319,6 +320,7 @@ const Members = () => {
                             onClick={() =>
                               showSubscribeFormHandler(member?._id)
                             }
+                            endIcon={<AddIcon />}
                           >
                             Subscribe to a new movie
                           </Button>
@@ -380,6 +382,10 @@ const Members = () => {
                                       marginTop: "10px",
                                     }}
                                     onClick={handleSubscribe}
+                                    endIcon={<AddIcon />}
+                                    disabled={
+                                      !selectedMovieId || !subscription.date
+                                    }
                                   >
                                     Subscribe
                                   </Button>

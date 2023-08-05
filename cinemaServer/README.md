@@ -41,7 +41,8 @@ The Subscriptions WS is a REST API developed with Node.js and Express. It fetche
 
 1. https://jsonplaceholder.typicode.com/users for the members data
 2. https://api.tvmaze.com/shows for the movies data
-   and populates the relevant collections in the Subscriptions database and manage them.
+
+and populates the relevant collections in the Subscriptions database and manage them.
 
 #### Cinema Web Service
 
@@ -61,10 +62,10 @@ The **Users.json** stores the following data for every user
 - SessionTimeOut (number) – the duration (in minutes) a user can work on the system
   once he logged in.
 
-- <b> Permissions.json</b>
+- <b>Permissions.json</b>
   A json file stores the users permissions. Each record (user) has a user id and array of permissions
 
-The Permissions.json stores all the user permissions regarding the movies management system:
+The **Permissions.json** stores all the user permissions regarding the movies management system:
 
 - Id (The \_id that created in the Data Base)
 - Permissions - an array of permissions (strings)
@@ -239,11 +240,11 @@ The app has multiple pages for handling different functionalities:
 
 7.  <b>Add user page</b> Allows the admin to add new user to the system with permissions
 
-<img src="https://imgtr.ee/images/2023/08/05/8a3033dbecf4b5b9d2767101982b16ec.png" alt="8a3033dbecf4b5b9d2767101982b16ec.png" width="800px" height = "400px">
+<img src="https://imgtr.ee/images/2023/08/05/53c3b46ee2d761a20f02860434efc3d0.png" alt="53c3b46ee2d761a20f02860434efc3d0.png" width="800px" height = "400px">
 
 8.  <b>Edit user</b> Allows admin to update user's data and their permissions
 
-<img src="https://imgtr.ee/images/2023/08/05/96a1ed872f87e376766bc144c2b10a3c.png" alt="96a1ed872f87e376766bc144c2b10a3c.png" width="800px" height = "400px">
+<img src="https://imgtr.ee/images/2023/08/05/81b24448081a665b065aaaa3046b8b1f.png" alt="81b24448081a665b065aaaa3046b8b1f.png" width="800px" height = "400px">
 
 9. <b>Movies dashboard Page</b> Allows users to Manage all movies and their data
 
@@ -257,17 +258,21 @@ The app has multiple pages for handling different functionalities:
 
 <img src="https://imgtr.ee/images/2023/08/05/226360663c8613d0f1ee0ef62fb2e420.png" alt="226360663c8613d0f1ee0ef62fb2e420.png" width="800px" height = "400px">
 
+- <b>Movie not found</b>
+
+<img src="https://imgtr.ee/images/2023/08/05/33c89e7afa217f854f1d1e2ceb9c7fba.png" alt="33c89e7afa217f854f1d1e2ceb9c7fba.png" width="800px" height = "400px">
+
 11. <b>Add Movie Page</b> Allows to create a new movie
 
-<img src="https://imgtr.ee/images/2023/08/05/fade898ce3ca6a95f8b9c1ad702656ca.png" alt="fade898ce3ca6a95f8b9c1ad702656ca.png" width="800px" height = "400px">
+<img src="https://imgtr.ee/images/2023/08/05/f065dddd2879def286484fd44eebf2b5.png" alt="f065dddd2879def286484fd44eebf2b5.png" width="800px" height = "400px">
 
 12. <b>Edit Movie Page</b> Allows to update a movie's data
 
-<img src="https://imgtr.ee/images/2023/08/05/e506a576ef9ad0c1ef6e0ed97ec19806.png" alt="e506a576ef9ad0c1ef6e0ed97ec19806.png" width="800px" height = "400px">
+<img src="https://imgtr.ee/images/2023/08/05/ec49bf01b62d93cb2957863b81de1a0b.png" alt="ec49bf01b62d93cb2957863b81de1a0b.png" width="800px" height = "400px">
 
 13. <b>Movie Page</b> Display information about a single movie
 
-<img src="https://imgtr.ee/images/2023/08/05/b6282310e538da8a5cfda9bf4e07a337.png" alt="b6282310e538da8a5cfda9bf4e07a337.png" width="800px" height = "400px">
+<img src="https://imgtr.ee/images/2023/08/05/c61497d3bf736c013ec4eae0a3e2fbe3.png" alt="c61497d3bf736c013ec4eae0a3e2fbe3.png" width="800px" height = "400px">
 
 14. <b>Subscriptions dashboard Page</b> Manages all members and their movies subscriptions
 
@@ -275,20 +280,28 @@ The app has multiple pages for handling different functionalities:
 
 15. <b>Members Page</b> Lists all the members and their subscriptions
 
-<img src="https://imgtr.ee/images/2023/08/05/6d945cf41d4feeb7bf2062f8340d0b3f.png" alt="6d945cf41d4feeb7bf2062f8340d0b3f.png" width="800px" height = "400px">
+<img src="https://imgtr.ee/images/2023/08/05/3c04c39509cc7f13cd43ee65f372a4e7.png" alt="3c04c39509cc7f13cd43ee65f372a4e7.png" width="800px" height = "400px">
 
 - <b>Search member</b>
 
-<img src="https://imgtr.ee/images/2023/08/05/3993dede59f472ea2ae9ebbf7d02e35f.png" alt="3993dede59f472ea2ae9ebbf7d02e35f.png" width="800px" height = "400px">
+<img src="https://imgtr.ee/images/2023/08/05/73f6d25f1426e7ea66249574d11dbe25.png" alt="73f6d25f1426e7ea66249574d11dbe25.png" width="800px" height = "400px">
+
+- <b>Member not found</b>
+
+<img src="https://imgtr.ee/images/2023/08/05/64e39fd45b9eb5844fea94fd665a231d.png" alt="64e39fd45b9eb5844fea94fd665a231d.png"  width="800px" height = "400px">
 
 - <b>Subscribe to new movie</b>
 
-<img src="https://imgtr.ee/images/2023/08/05/1adcf75342be6c105f975104c6354896.png" alt="1adcf75342be6c105f975104c6354896.png" width="800px" height = "400px">
+<img src="https://imgtr.ee/images/2023/08/05/3d6333f7b269a569347316111cf27bd1.png" alt="3d6333f7b269a569347316111cf27bd1.png" width="800px" height = "400px">
 
 16. <b>Add Member Page</b> Allows to add a new member
 
-<img src="https://imgtr.ee/images/2023/08/05/1b4e09aa12663ced7d4f433c08e350c5.png" alt="1b4e09aa12663ced7d4f433c08e350c5.png" width="800px" height = "400px">
+<img src="https://imgtr.ee/images/2023/08/05/48a90a3dc532575e1c7eca736d88fe3f.png" alt="48a90a3dc532575e1c7eca736d88fe3f.png" width="800px" height = "400px">
 
 17. <b>Edit Member Page</b> Allows to update a member's data
 
-<img src="https://imgtr.ee/images/2023/08/05/1310d9c859b973d6763306bd31f07576.png" alt="1310d9c859b973d6763306bd31f07576.png" width="800px" height = "400px">
+<img src="https://imgtr.ee/images/2023/08/05/d72ec65e80650451eabccd375f381eb7.png" alt="d72ec65e80650451eabccd375f381eb7.png" width="800px" height = "400px">
+
+18. <b>Page not found</b>
+
+<img src="https://imgtr.ee/images/2023/08/05/19b106b694b6ab5d560c0749587811c6.png" alt="19b106b694b6ab5d560c0749587811c6.png" width="800px" height = "400px">

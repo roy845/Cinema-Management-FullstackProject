@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { createMember } from "../Api/serverAPI";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router";
+import CancelIcon from "@mui/icons-material/Cancel";
+import SaveIcon from "@mui/icons-material/Save";
 
 const AddMember = () => {
   const [member, setMember] = useState({
@@ -93,13 +95,20 @@ const AddMember = () => {
             justifyContent: "center",
           }}
         >
-          <Button type="submit" variant="contained" color="primary">
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            endIcon={<SaveIcon />}
+            disabled={!member.Name || !member.Email || !member.City}
+          >
             Save
           </Button>
           <Button
             variant="contained"
             style={{ backgroundColor: "red", color: "white" }}
             onClick={() => navigate("/members/allMembers")}
+            endIcon={<CancelIcon />}
           >
             Cancel
           </Button>

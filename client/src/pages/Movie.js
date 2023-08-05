@@ -5,6 +5,7 @@ import { toast } from "react-hot-toast";
 import { Box, Button, TextField } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const Movie = () => {
   let { movieId } = useParams();
@@ -37,7 +38,7 @@ const Movie = () => {
       }}
     >
       {isLoading ? (
-        <Spinner text={"movie"} />
+        <Spinner text={"Movie"} />
       ) : (
         <>
           <h1 style={{ textAlign: "center" }}>{movie?.Name}</h1>
@@ -89,13 +90,14 @@ const Movie = () => {
               >
                 <Button
                   type="submit"
+                  color="primary"
                   variant="contained"
                   style={{
-                    backgroundColor: "blue",
                     color: "white",
                     marginTop: "20px",
                   }}
                   onClick={() => navigate("/movies/allMovies")}
+                  startIcon={<ArrowBackIcon />}
                 >
                   Back to movies
                 </Button>

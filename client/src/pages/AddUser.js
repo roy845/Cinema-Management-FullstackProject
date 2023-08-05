@@ -10,6 +10,8 @@ import { addUser } from "../Api/serverAPI";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router";
 import { PERMISSIONS } from "../permissions/permissions";
+import CancelIcon from "@mui/icons-material/Cancel";
+import SaveIcon from "@mui/icons-material/Save";
 
 const AddUser = () => {
   const [user, setUser] = useState({
@@ -188,6 +190,7 @@ const AddUser = () => {
                 !user.UserName ||
                 user.SessionTimeOut <= 0
               }
+              endIcon={<SaveIcon />}
             >
               Save
             </Button>
@@ -196,6 +199,7 @@ const AddUser = () => {
               variant="contained"
               style={{ backgroundColor: "red", color: "white" }}
               onClick={() => navigate("/users/allUsers")}
+              endIcon={<CancelIcon />}
             >
               Cancel
             </Button>

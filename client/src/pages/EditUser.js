@@ -12,6 +12,8 @@ import { getUser, updateUser } from "../Api/serverAPI";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router";
 import Spinner from "../components/Spinner";
+import CancelIcon from "@mui/icons-material/Cancel";
+import UpdateIcon from "@mui/icons-material/Update";
 
 const EditUser = () => {
   const [user, setUser] = useState({
@@ -199,7 +201,12 @@ const EditUser = () => {
                     }}
                   >
                     {" "}
-                    <Button type="submit" variant="contained" color="primary">
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      color="primary"
+                      endIcon={<UpdateIcon />}
+                    >
                       Update
                     </Button>
                     <Button
@@ -207,6 +214,7 @@ const EditUser = () => {
                       variant="contained"
                       style={{ backgroundColor: "red", color: "white" }}
                       onClick={() => navigate("/users/allUsers")}
+                      endIcon={<CancelIcon />}
                     >
                       Cancel
                     </Button>

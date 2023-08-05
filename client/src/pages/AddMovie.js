@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import { DatePicker } from "@mui/x-date-pickers";
 import { createMovie } from "../Api/serverAPI";
+import CancelIcon from "@mui/icons-material/Cancel";
+import SaveIcon from "@mui/icons-material/Save";
 
 const EditMovie = () => {
   const [movie, setMovie] = useState({
@@ -110,7 +112,18 @@ const EditMovie = () => {
             gap: "10px",
           }}
         >
-          <Button type="submit" variant="contained" color="primary">
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            endIcon={<SaveIcon />}
+            disabled={
+              !movie.Name ||
+              movie.Genres.length === 0 ||
+              !movie.Image ||
+              !movie.Premiered
+            }
+          >
             Save
           </Button>
           <Button
@@ -118,6 +131,7 @@ const EditMovie = () => {
             variant="contained"
             style={{ backgroundColor: "red", color: "white" }}
             onClick={() => navigate("/movies/allMovies")}
+            endIcon={<CancelIcon />}
           >
             Cancel
           </Button>

@@ -6,6 +6,9 @@ import { getMovie, updateMovie } from "../Api/serverAPI";
 import { toast } from "react-hot-toast";
 import { DatePicker } from "@mui/x-date-pickers";
 import { format } from "date-fns";
+import CancelIcon from "@mui/icons-material/Cancel";
+import UpdateIcon from "@mui/icons-material/Update";
+import Spinner from "../components/Spinner";
 
 const EditMovie = () => {
   const { movieId } = useParams();
@@ -60,89 +63,102 @@ const EditMovie = () => {
 
   return (
     <Layout title="Edit Movie">
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <h1 style={{ textAlign: "center" }}>Edit Movie - {movie?.Name}</h1>
-        {movie && (
-          <form
-            onSubmit={handleFormSubmit}
-            style={{
+      {isLoading ? (
+        <Spinner text={"Edit Movie"} />
+      ) : (
+        <>
+          {" "}
+          <Box
+            sx={{
               display: "flex",
               flexDirection: "column",
-              gap: "20px",
-              justifyContent: "center",
-              width: "100%",
               alignItems: "center",
             }}
           >
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "20px",
-              }}
-            >
-              <img src={movie?.Image} />
-              <TextField
-                label="Movie Name"
-                name="Name"
-                variant="outlined"
-                value={movie.Name}
-                onChange={handleInputChange}
-              />
-              <TextField
-                label="Genres"
-                name="Genres"
-                variant="outlined"
-                value={movie?.Genres?.join(", ")}
-                onChange={handleInputChange}
-              />
-              <TextField
-                label="Image Url"
-                name="Image"
-                variant="outlined"
-                value={movie.Image}
-                onChange={handleInputChange}
-              />
-              <DatePicker
-                value={date}
-                label="Date"
-                onChange={(date) => {
-                  setDate(date);
-                  setMovie({
-                    ...movie,
-                    Premiered: date,
-                  });
+            <h1 style={{ textAlign: "center" }}>Edit Movie - {movie?.Name}</h1>
+            {movie && (
+              <form
+                onSubmit={handleFormSubmit}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "20px",
+                  justifyContent: "center",
+                  width: "100%",
+                  alignItems: "center",
                 }}
-              />
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                gap: "10px",
-              }}
-            >
-              <Button type="submit" variant="contained" color="primary">
-                Update
-              </Button>
-              <Button
-                type="submit"
-                variant="contained"
-                style={{ backgroundColor: "red", color: "white" }}
-                onClick={() => navigate("/movies/allMovies")}
               >
-                Cancel
-              </Button>
-            </Box>
-          </form>
-        )}
-      </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "20px",
+                  }}
+                >
+                  <img src={movie?.Image} />
+                  <TextField
+                    label="Movie Name"
+                    name="Name"
+                    variant="outlined"
+                    value={movie.Name}
+                    onChange={handleInputChange}
+                  />
+                  <TextField
+                    label="Genres"
+                    name="Genres"
+                    variant="outlined"
+                    value={movie?.Genres?.join(", ")}
+                    onChange={handleInputChange}
+                  />
+                  <TextField
+                    label="Image Url"
+                    name="Image"
+                    variant="outlined"
+                    value={movie.Image}
+                    onChange={handleInputChange}
+                  />
+                  <DatePicker
+                    value={date}
+                    label="Date"
+                    onChange={(date) => {
+                      setDate(date);
+                      setMovie({
+                        ...movie,
+                        Premiered: date,
+                      });
+                    }}
+                  />
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    gap: "10px",
+                  }}
+                >
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                    endIcon={<UpdateIcon />}
+                  >
+                    Update
+                  </Button>
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    style={{ backgroundColor: "red", color: "white" }}
+                    onClick={() => navigate("/movies/allMovies")}
+                    endIcon={<CancelIcon />}
+                  >
+                    Cancel
+                  </Button>
+                </Box>
+              </form>
+            )}
+          </Box>
+        </>
+      )}
     </Layout>
   );
 };
