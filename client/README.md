@@ -1,46 +1,231 @@
-# Getting Started with Create React App and Redux
+# Cinema Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+This project is a web application for managing movies users and subscriptions. It's built using a full-stack JavaScript architecture, using MongoDB as the database, Node.js for the back-end, and React for the front-end.
 
-## Available Scripts
+## Technology stack
 
-In the project directory, you can run:
+- **React**
+  <img src="https://upload.wikimedia.org/wikipedia/he/a/a7/React-icon.svg" width="124px" height="124px">
+- **MongoDB**
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg" width="124px" height="124px">
+- **NodeJs**
+  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" width="124px" height="124px">
 
-### `npm start`
+- **Express**
+  <img src = "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" width = "60px" height = "60px">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **JWT (JSON Web Tokens)**
+  <img src = "https://cdn.worldvectorlogo.com/logos/jwt-3.svg" width = "60px" height = "60px">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Material UI**
+  <img src="https://imgtr.ee/images/2023/08/05/d973e444eea4230bcba93cb79b1168e0.png" alt="d973e444eea4230bcba93cb79b1168e0.png" width = "60px" height = "60px">
 
-### `npm test`
+- **VSCODE**
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" width="60px" height="60px">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
 
-### `npm run build`
+The project is divided into two main parts:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. The Back-end (Subscriptions and Cinema Web Services (NodeJs RESTApi's))
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. The Front-end (Client)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img src="https://imgtr.ee/images/2023/08/05/49a64ab9819a038506c71b45a502c08e.png" alt="49a64ab9819a038506c71b45a502c08e.png">
 
-### `npm run eject`
+### Back-end
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Subscriptions Web Service (WS)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The Subscriptions WS is a REST API developed with Node.js and Express. It fetches data from 2 external web services:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. https://jsonplaceholder.typicode.com/users for the members data
+2. https://api.tvmaze.com/shows for the movies data
+   and populates the relevant collections in the Subscriptions database and manage them.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Cinema Web Service
 
-## Learn More
+The Cinema WS is another Node.js and Express REST API that manages the users and their permissions in the database and files.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Databases
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Two MongoDB databases are used
+
+- <b>Users DB</b>
+  Stores user's details and their hashed passwords
+
+- <b>Subscriptions DB</b>
+  Consists of three collections - Members - Movies - Subscriptions.
+
+### Front-end
+
+The front-end part of the application is developed with React and Material UI. It consists of several pages for managing subscriptions, movies, and users.
+
+### Installation and Setup
+
+<b>Clone the repository</b>
+git clone https://github.com/roy845/Cinema-Management-FullstackProject.git
+
+#### Client
+
+#### Install the dependencies and start the client
+
+1. Open a new terminal in VSCODE.
+2. Navigate to the client directory: cd client.
+3. Install dependencies: npm/yarn install.
+4. Run the client: npm/yarn start.
+
+#### Server
+
+##### Cinema Server
+
+#### Install the dependencies and start the server
+
+1. Open a new terminal in VSCODE.
+
+2. Navigate to the server directory: cd cinemaServer.
+
+3. Install dependencies: npm/yarn install.
+
+Create a .env file in the root server directory.
+
+In the .env file, set the following variables:
+
+PORT: The port number on which the server will run (e.g., PORT=8801).
+
+MONGO_DB_URI: The MongoDB connection URI for connecting to the database (e.g., MONGODB_URI=mongodb://localhost:27017/mydatabase).
+
+JWT_SECRET_KEY:This key used for authentication and authorization. Here is how you can generate this key:
+
+1. Open a terminal.
+
+2. Type the following command and press Enter to generate a random JWT secret key
+
+require('crypto').randomBytes(32).toString('hex')
+
+3. Copy the generated secret key.
+
+4. Open the .env file in the server directory.
+
+5. Set the JWT_SECRET_KEY variable by pasting the generated secret key.
+
+For example:
+
+JWT_SECRET_KEY=generated_secret_key
+
+Save the .env file.
+
+6. Run the server: node server.js.
+
+##### Subscriptions Server
+
+#### Install the dependencies and start the server
+
+1. Open a new terminal in VSCODE.
+
+2. Navigate to the server directory: cd subscriptionsServer.
+
+3. Install dependencies: npm/yarn install.
+
+4. Create a .env file in the server directory.
+
+In the .env file, set the following variables:
+
+PORT: The port number on which the server will run (e.g., PORT=8800).
+
+MONGO_DB_URI: The MongoDB connection URI for connecting to the database (e.g., MONGODB_URI=mongodb://localhost:27017/mydatabase).
+
+5. Run the server: node server.js.
+
+### Features
+
+- User authentication and permissions
+- Fetching movie and member data from external web services
+- CRUD operations for Movies, Subscriptions, and Users
+- Reactive user interface with React and Material UI
+- <b>Auto logout:</b> For each user, there is a field in MongoDB called SessionTimeOut that controls the duration (in minutes) a user can work on the system once they have logged in. Once that time is up, the user is logged out from the system.
+
+## Usage
+
+The app has multiple pages for handling different functionalities:
+
+1. <b>Login Page:</b> For user authentication
+
+<img src="https://imgtr.ee/images/2023/08/05/fd04598798741f019b74e1913748b876.png" alt="fd04598798741f019b74e1913748b876.png" width="800px" height = "400px">
+
+2. <b>CreateAccount Page (Register):</b> Allows new users to signup with their details
+
+<img src="https://imgtr.ee/images/2023/08/05/bada4cf9281c7e28a7a5f9d3880bce27.png" alt="bada4cf9281c7e28a7a5f9d3880bce27.png" width="800px" height = "400px">
+
+3. Navigation menu:
+
+<img src="https://imgtr.ee/images/2023/08/05/c26437d0b1ef6da7860b9bb9540b468f.png" alt="c26437d0b1ef6da7860b9bb9540b468f.png" width="800px" height = "400px">
+
+4. <b>Dashboard Page:</b> Contains a menu for system movies and subscriptions options
+   User management is only available for admin users who are defined by the admin
+
+<img src="https://imgtr.ee/images/2023/08/05/dd6ad625d2cca984c5b34197f3f554fa.png" alt="dd6ad625d2cca984c5b34197f3f554fa.png" width="800px" height = "400px">
+
+5. <b>Users dashboard Page</b> (Admin only) Allows the admin to manage all users
+
+<img src="https://imgtr.ee/images/2023/08/05/be8615095ddf06ea6bb9baec4bb68fcf.png" alt="be8615095ddf06ea6bb9baec4bb68fcf.png" width="800px" height = "400px">
+
+6. <b> Users page</b> Allows the admin to view the registered users
+
+<img src="https://imgtr.ee/images/2023/08/05/324b8a49d6eeffa403928503b1f1debd.png" alt="324b8a49d6eeffa403928503b1f1debd.png" width="800px" height = "400px">
+
+7.  <b>Add user page</b> Allows the admin to add new user to the system with permissions
+
+<img src="https://imgtr.ee/images/2023/08/05/8a3033dbecf4b5b9d2767101982b16ec.png" alt="8a3033dbecf4b5b9d2767101982b16ec.png" width="800px" height = "400px">
+
+8.  <b>Edit user</b> Allows admin to update user's data and their permissions
+
+<img src="https://imgtr.ee/images/2023/08/05/96a1ed872f87e376766bc144c2b10a3c.png" alt="96a1ed872f87e376766bc144c2b10a3c.png" width="800px" height = "400px">
+
+9. <b>Movies dashboard Page</b> Allows users to Manage all movies and their data
+
+<img src="https://imgtr.ee/images/2023/08/05/7e26cbe3d87d0c7f2d6bd4d8b91fd0b7.png" alt="7e26cbe3d87d0c7f2d6bd4d8b91fd0b7.png" width="800px" height = "400px">
+
+10. <b>Movies Page</b> Allows users to view all the movies in the system and search for specific movie
+
+<img src="https://imgtr.ee/images/2023/08/05/11879c806c89ca84e4d2ec81b1a55ce9.png" alt="11879c806c89ca84e4d2ec81b1a55ce9.png" width="800px" height = "400px">
+
+- <b>Search movie</b>
+
+<img src="https://imgtr.ee/images/2023/08/05/226360663c8613d0f1ee0ef62fb2e420.png" alt="226360663c8613d0f1ee0ef62fb2e420.png" width="800px" height = "400px">
+
+11. <b>Add Movie Page</b> Allows to create a new movie
+
+<img src="https://imgtr.ee/images/2023/08/05/fade898ce3ca6a95f8b9c1ad702656ca.png" alt="fade898ce3ca6a95f8b9c1ad702656ca.png" width="800px" height = "400px">
+
+12. <b>Edit Movie Page</b> Allows to update a movie's data
+
+<img src="https://imgtr.ee/images/2023/08/05/e506a576ef9ad0c1ef6e0ed97ec19806.png" alt="e506a576ef9ad0c1ef6e0ed97ec19806.png" width="800px" height = "400px">
+
+13. <b>Movie Page</b> Display information about a single movie
+
+<img src="https://imgtr.ee/images/2023/08/05/b6282310e538da8a5cfda9bf4e07a337.png" alt="b6282310e538da8a5cfda9bf4e07a337.png" width="800px" height = "400px">
+
+14. <b>Subscriptions dashboard Page</b> Manages all members and their movies subscriptions
+
+<img src="https://imgtr.ee/images/2023/08/05/13d5dcdadd0014dae7fdef70751dae34.png" alt="13d5dcdadd0014dae7fdef70751dae34.png" width="800px" height = "400px">
+
+15. <b>Members Page</b> Lists all the members and their subscriptions
+
+<img src="https://imgtr.ee/images/2023/08/05/6d945cf41d4feeb7bf2062f8340d0b3f.png" alt="6d945cf41d4feeb7bf2062f8340d0b3f.png" width="800px" height = "400px">
+
+- <b>Search member</b>
+
+<img src="https://imgtr.ee/images/2023/08/05/3993dede59f472ea2ae9ebbf7d02e35f.png" alt="3993dede59f472ea2ae9ebbf7d02e35f.png" width="800px" height = "400px">
+
+- <b>Subscribe to new movie</b>
+
+<img src="https://imgtr.ee/images/2023/08/05/1adcf75342be6c105f975104c6354896.png" alt="1adcf75342be6c105f975104c6354896.png" width="800px" height = "400px">
+
+16. <b>Add Member Page</b> Allows to add a new member
+
+<img src="https://imgtr.ee/images/2023/08/05/1b4e09aa12663ced7d4f433c08e350c5.png" alt="1b4e09aa12663ced7d4f433c08e350c5.png" width="800px" height = "400px">
+
+17. <b>Edit Member Page</b> Allows to update a member's data
+
+<img src="https://imgtr.ee/images/2023/08/05/1310d9c859b973d6763306bd31f07576.png" alt="1310d9c859b973d6763306bd31f07576.png" width="800px" height = "400px">
