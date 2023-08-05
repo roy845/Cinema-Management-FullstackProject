@@ -47,15 +47,78 @@ The Subscriptions WS is a REST API developed with Node.js and Express. It fetche
 
 The Cinema WS is another Node.js and Express REST API that manages the users and their permissions in the database and files.
 
+#### Files
+
+- <b>Users.json</b>
+  A json file stores the system users data. Each user has an ID from mongoDB & name
+
+The **Users.json** stores the following data for every user
+
+- Id (The \_id that created in the Data Base)
+- First Name
+- Last Name
+- Created date
+- SessionTimeOut (number) – the duration (in minutes) a user can work on the system
+  once he logged in.
+
+- <b> Permissions.json</b>
+  A json file stores the users permissions. Each record (user) has a user id and array of permissions
+
+The Permissions.json stores all the user permissions regarding the movies management system:
+
+- Id (The \_id that created in the Data Base)
+- Permissions - an array of permissions (strings)
+- View Subscriptions
+- Create Subscriptions
+- Delete Subscriptions
+- View Movies
+- Create Movies
+- Delete Movies
+
+**A user can have many permissions !**
+
 #### Databases
 
 Two MongoDB databases are used
 
 - <b>Users DB</b>
-  Stores user's details and their hashed passwords
+  The User DB database stored a collection with the following data
+
+- \_Id (ObjectId)
+- UserName (Required for login)
+- FirstName (Required for register)
+- LastName (Required for register)
+- Password (Required for login)
+- SessionTimeOut (number)
+
+**_The system starts with only one (pre-defined) record of the
+System Admin data (both in the json files and in the data base)_**
 
 - <b>Subscriptions DB</b>
-  Consists of three collections - Members - Movies - Subscriptions.
+  A MongoDB database holds 3 collections
+
+1. <b>Members – </b> A collection that stores the subscription members data pulled from the
+   Members WS at https://jsonplaceholder.typicode.com/users :
+
+- \_id (ObjectId)
+- Name (String)
+- Email ( String)
+- City (String)
+
+2. <b>Movies – </b> A collection that stores movies data pulled from the Movies WS as
+   https://api.tvmaze.com/shows
+
+- \_id (ObjectId)
+- Name
+- Genres ( Array od Strings)
+- Image ( A string – The url of the image picture)
+- Premiered ( Date)
+
+3. <b>Subscriptions – </b> A collection stores the data of all the subscriptions:
+
+- \_id (ObjectId)
+- MemberId (ObjectId)
+- Movies ( an Array of { movieId : Object Id, date : Date} ) - This field store all the movies the member (subscription) watched and their dates
 
 ### Front-end
 
