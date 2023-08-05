@@ -223,7 +223,7 @@ The app has multiple pages for handling different functionalities:
 
 3. Navigation menu:
 
-<img src="https://imgtr.ee/images/2023/08/05/c26437d0b1ef6da7860b9bb9540b468f.png" alt="c26437d0b1ef6da7860b9bb9540b468f.png" width="800px" height = "400px">
+<img src="https://imgtr.ee/images/2023/08/05/c26437d0b1ef6da7860b9bb9540b468f.png" alt="c26437d0b1ef6da7860b9bb9540b468f.png" height="100%">
 
 4. <b>Dashboard Page:</b> Contains a menu for system movies and subscriptions options
    User management is only available for admin users who are defined by the admin
