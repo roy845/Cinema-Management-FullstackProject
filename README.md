@@ -18,7 +18,7 @@ This project is a web application for managing movies users and subscriptions. I
   <img src = "https://cdn.worldvectorlogo.com/logos/jwt-3.svg" width = "60px" height = "60px">
 
 - **Material UI**
-  <img src="https://imgtr.ee/images/2023/08/05/d973e444eea4230bcba93cb79b1168e0.png" alt="d973e444eea4230bcba93cb79b1168e0.png" width = "60px" height = "60px">
+  <a href="https://ibb.co/VtWN1my"><img src="https://i.ibb.co/wRNLksH/mui-logo.png" alt="mui-logo" width = "60px" height = "60px"></a>
 
 - **VSCODE**
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" width="60px" height="60px">
@@ -31,7 +31,7 @@ The project is divided into two main parts:
 
 2. The Front-end (Client)
 
-<img src="https://imgtr.ee/images/2023/08/05/49a64ab9819a038506c71b45a502c08e.png" alt="49a64ab9819a038506c71b45a502c08e.png">
+<a href="https://ibb.co/L52XNv7"><img src="https://i.ibb.co/ySbc4Vj/project-architecture.png" alt="project-architecture" border="0"></a>
 
 ### Back-end
 
@@ -215,93 +215,93 @@ The app has multiple pages for handling different functionalities:
 
 1. <b>Login Page:</b> For user authentication
 
-<img src="https://imgtr.ee/images/2023/08/05/fd04598798741f019b74e1913748b876.png" alt="fd04598798741f019b74e1913748b876.png" width="800px" height = "400px">
+<a href="https://ibb.co/L1gzR4Q"><img src="https://i.ibb.co/2dM7hX8/login-page.png" alt="login-page" border="0"></a>
 
 2. <b>CreateAccount Page (Register):</b> Allows new users to signup with their details
 
-<img src="https://imgtr.ee/images/2023/08/05/bada4cf9281c7e28a7a5f9d3880bce27.png" alt="bada4cf9281c7e28a7a5f9d3880bce27.png" width="800px" height = "400px">
+<a href="https://ibb.co/CV43sRP"><img src="https://i.ibb.co/MPKx5FB/signup-page.png" alt="signup-page" border="0"></a>
 
-3. Navigation menu:
+3. <b>Navigation menu:</b>
 
-<img src="https://imgtr.ee/images/2023/08/05/c26437d0b1ef6da7860b9bb9540b468f.png" alt="c26437d0b1ef6da7860b9bb9540b468f.png" height="100%">
+<a href="https://ibb.co/q0PhVqV"><img src="https://i.ibb.co/9wCBSKS/Navigation-menu.png" alt="Navigation-menu" border="0"></a>
 
 4. <b>Dashboard Page:</b> Contains a menu for system movies and subscriptions options
    User management is only available for admin users who are defined by the admin
 
-<img src="https://imgtr.ee/images/2023/08/05/dd6ad625d2cca984c5b34197f3f554fa.png" alt="dd6ad625d2cca984c5b34197f3f554fa.png" width="800px" height = "400px">
+<a href="https://ibb.co/0DNLxWg"><img src="https://i.ibb.co/Wx9XLdb/Dashboard-page.png" alt="Dashboard-page" border="0"></a>
 
 5. <b>Users dashboard Page</b> (Admin only) Allows the admin to manage all users
 
-<img src="https://imgtr.ee/images/2023/08/05/be8615095ddf06ea6bb9baec4bb68fcf.png" alt="be8615095ddf06ea6bb9baec4bb68fcf.png" width="800px" height = "400px">
+<a href="https://ibb.co/hFC9v1Q"><img src="https://i.ibb.co/XxVLTk0/Users-dashboard.png" alt="Users-dashboard" border="0"></a>
 
 6. <b> Users page</b> Allows the admin to view the registered users
 
-<img src="https://imgtr.ee/images/2023/08/05/324b8a49d6eeffa403928503b1f1debd.png" alt="324b8a49d6eeffa403928503b1f1debd.png" width="800px" height = "400px">
+<a href="https://ibb.co/K2Kkp8s"><img src="https://i.ibb.co/6HXx7qt/Users-page.png" alt="Users-page" border="0"></a>
 
 7.  <b>Add user page</b> Allows the admin to add new user to the system with permissions
 
-<img src="https://imgtr.ee/images/2023/08/05/53c3b46ee2d761a20f02860434efc3d0.png" alt="53c3b46ee2d761a20f02860434efc3d0.png" width="800px" height = "400px">
+<a href="https://ibb.co/Y21Ty3D"><img src="https://i.ibb.co/PxPz9NT/Add-user-page.png" alt="Add-user-page" border="0"></a>
 
 8.  <b>Edit user</b> Allows admin to update user's data and their permissions
 
-<img src="https://imgtr.ee/images/2023/08/05/81b24448081a665b065aaaa3046b8b1f.png" alt="81b24448081a665b065aaaa3046b8b1f.png" width="800px" height = "400px">
+<a href="https://ibb.co/QHDSVzY"><img src="https://i.ibb.co/94ZK0zy/Edit-user-page.png" alt="Edit-user-page" border="0"></a>
 
 9. <b>Movies dashboard Page</b> Allows users to Manage all movies and their data
 
-<img src="https://imgtr.ee/images/2023/08/05/7e26cbe3d87d0c7f2d6bd4d8b91fd0b7.png" alt="7e26cbe3d87d0c7f2d6bd4d8b91fd0b7.png" width="800px" height = "400px">
+<a href="https://ibb.co/cwNGwQw"><img src="https://i.ibb.co/RNCxNcN/Movies-Dashboard-page.png" alt="Movies-Dashboard-page" border="0"></a>
 
 10. <b>Movies Page</b> Allows users to view all the movies in the system and search for specific movie
 
-<img src="https://imgtr.ee/images/2023/08/05/11879c806c89ca84e4d2ec81b1a55ce9.png" alt="11879c806c89ca84e4d2ec81b1a55ce9.png" width="800px" height = "400px">
+<a href="https://ibb.co/b7xLcVg"><img src="https://i.ibb.co/rvgMDhG/Movies-page.png" alt="Movies-page" border="0"></a>
 
 - <b>Search movie</b>
 
-<img src="https://imgtr.ee/images/2023/08/05/226360663c8613d0f1ee0ef62fb2e420.png" alt="226360663c8613d0f1ee0ef62fb2e420.png" width="800px" height = "400px">
+<a href="https://ibb.co/TBsnR6R"><img src="https://i.ibb.co/1fkpK1K/Movies-search.png" alt="Movies-search" border="0"></a>
 
 - <b>Movie not found</b>
 
-<img src="https://imgtr.ee/images/2023/08/05/33c89e7afa217f854f1d1e2ceb9c7fba.png" alt="33c89e7afa217f854f1d1e2ceb9c7fba.png" width="800px" height = "400px">
+<a href="https://ibb.co/bK66nCG"><img src="https://i.ibb.co/cryydZs/movie-not-found.png" alt="movie-not-found" border="0"></a>
 
 11. <b>Add Movie Page</b> Allows to create a new movie
 
-<img src="https://imgtr.ee/images/2023/08/05/f065dddd2879def286484fd44eebf2b5.png" alt="f065dddd2879def286484fd44eebf2b5.png" width="800px" height = "400px">
+<a href="https://ibb.co/p3HV2cK"><img src="https://i.ibb.co/khLbKjD/Add-movie-page.png" alt="Add-movie-page" border="0"></a>
 
 12. <b>Edit Movie Page</b> Allows to update a movie's data
 
-<img src="https://imgtr.ee/images/2023/08/05/ec49bf01b62d93cb2957863b81de1a0b.png" alt="ec49bf01b62d93cb2957863b81de1a0b.png" width="800px" height = "400px">
+<a href="https://ibb.co/khHs0pJ"><img src="https://i.ibb.co/p30BZgQ/Edit-Movie-page.png" alt="Edit-Movie-page" border="0"></a>
 
 13. <b>Movie Page</b> Display information about a single movie
 
-<img src="https://imgtr.ee/images/2023/08/05/c61497d3bf736c013ec4eae0a3e2fbe3.png" alt="c61497d3bf736c013ec4eae0a3e2fbe3.png" width="800px" height = "400px">
+<a href="https://ibb.co/2KRdqKY"><img src="https://i.ibb.co/F7cz67q/Movie-page.png" alt="Movie-page" border="0"></a>
 
 14. <b>Subscriptions dashboard Page</b> Manages all members and their movies subscriptions
 
-<img src="https://imgtr.ee/images/2023/08/05/13d5dcdadd0014dae7fdef70751dae34.png" alt="13d5dcdadd0014dae7fdef70751dae34.png" width="800px" height = "400px">
+<a href="https://ibb.co/0BbckzG"><img src="https://i.ibb.co/mvWGmPc/members-dashboard-page.png" alt="members-dashboard-page" border="0"></a>
 
 15. <b>Members Page</b> Lists all the members and their subscriptions
 
-<img src="https://imgtr.ee/images/2023/08/05/3c04c39509cc7f13cd43ee65f372a4e7.png" alt="3c04c39509cc7f13cd43ee65f372a4e7.png" width="800px" height = "400px">
+<a href="https://ibb.co/bKc5j0R"><img src="https://i.ibb.co/4VhRwqg/All-members.png" alt="All-members" border="0"></a>
 
 - <b>Search member</b>
 
-<img src="https://imgtr.ee/images/2023/08/05/73f6d25f1426e7ea66249574d11dbe25.png" alt="73f6d25f1426e7ea66249574d11dbe25.png" width="800px" height = "400px">
+<a href="https://ibb.co/K2wwGb7"><img src="https://i.ibb.co/rxsstFM/Member-search.png" alt="Member-search" border="0"></a>
 
 - <b>Member not found</b>
 
-<img src="https://imgtr.ee/images/2023/08/05/64e39fd45b9eb5844fea94fd665a231d.png" alt="64e39fd45b9eb5844fea94fd665a231d.png"  width="800px" height = "400px">
+<a href="https://ibb.co/Kxt8pZQ"><img src="https://i.ibb.co/WvrR49d/member-not-found.png" alt="member-not-found" border="0"></a>
 
 - <b>Subscribe to new movie</b>
 
-<img src="https://imgtr.ee/images/2023/08/05/3d6333f7b269a569347316111cf27bd1.png" alt="3d6333f7b269a569347316111cf27bd1.png" width="800px" height = "400px">
+<a href="https://ibb.co/tL140q9"><img src="https://i.ibb.co/sWX2TKZ/Subscribe-to-movie.png" alt="Subscribe-to-movie" border="0"></a>
 
 16. <b>Add Member Page</b> Allows to add a new member
 
-<img src="https://imgtr.ee/images/2023/08/05/48a90a3dc532575e1c7eca736d88fe3f.png" alt="48a90a3dc532575e1c7eca736d88fe3f.png" width="800px" height = "400px">
+<a href="https://ibb.co/XJctqLj"><img src="https://i.ibb.co/ZTqx0XG/Add-member-page.png" alt="Add-member-page" border="0"></a>
 
 17. <b>Edit Member Page</b> Allows to update a member's data
 
-<img src="https://imgtr.ee/images/2023/08/05/d72ec65e80650451eabccd375f381eb7.png" alt="d72ec65e80650451eabccd375f381eb7.png" width="800px" height = "400px">
+<a href="https://ibb.co/4KnrvDH"><img src="https://i.ibb.co/Qp3wSq4/Edit-member-page.png" alt="Edit-member-page" border="0"></a>
 
 18. <b>Page not found</b>
 
-<img src="https://imgtr.ee/images/2023/08/05/19b106b694b6ab5d560c0749587811c6.png" alt="19b106b694b6ab5d560c0749587811c6.png" width="800px" height = "400px">
+<a href="https://ibb.co/LPnsfZd"><img src="https://i.ibb.co/7z20F1t/page-not-found.png" alt="page-not-found" border="0"></a>
